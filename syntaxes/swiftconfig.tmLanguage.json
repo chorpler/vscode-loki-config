@@ -85,15 +85,27 @@
       "patterns": [
         {
           "name": "meta.assignment.swiftconfig",
-          "match": "^(\\s*)([A-Za-z_][\\w.-]*)(\\s+)(true|false)(?:(\\s+)(#.*))?$",
+          "match": "^(\\s*)([A-Za-z_][\\w-]*)(\\.)?([\\w-]*)?(\\.)?([\\w-]*)?(\\s+)(true|false)(?:(\\s+)(#.*))?$",
           "captures": {
             "2": {
               "name": "variable.other.key.swiftconfig"
             },
+            "3": {
+              "name": "variable.other.key-divider.swiftconfig"
+            },
             "4": {
-              "name": "constant.language.boolean.swiftconfig"
+              "name": "variable.other.key-part2.swiftconfig"
+            },
+            "5": {
+              "name": "variable.other.key-divider.swiftconfig"
             },
             "6": {
+              "name": "variable.other.key-part3.swiftconfig"
+            },
+            "8": {
+              "name": "constant.language.boolean.swiftconfig"
+            },
+            "10": {
               "name": "comment.line.number-sign.swiftconfig"
             }
           }
@@ -104,15 +116,27 @@
       "patterns": [
         {
           "name": "meta.assignment.swiftconfig",
-          "match": "^(\\s*)([A-Za-z_][\\w.-]*)(\\s+)([-+]?\\d+(?:\\.\\d+)?(?:[eE][-+]?\\d+)?)(?:(\\s+)(#.*))?$",
+          "match": "^(\\s*)([A-Za-z_][\\w-]*)(\\.)?([\\w-]*)?(\\.)?([\\w-]*)?(\\s+)([-+]?\\d+(?:\\.\\d+)?(?:[eE][-+]?\\d+)?)(?:(\\s+)(#.*))?$",
           "captures": {
             "2": {
               "name": "variable.other.key.swiftconfig"
             },
+            "3": {
+              "name": "variable.other.key-divider.swiftconfig"
+            },
             "4": {
-              "name": "constant.numeric.swiftconfig"
+              "name": "variable.other.key-part2.swiftconfig"
+            },
+            "5": {
+              "name": "variable.other.key-divider.swiftconfig"
             },
             "6": {
+              "name": "variable.other.key-part3.swiftconfig"
+            },
+            "8": {
+              "name": "constant.numeric.swiftconfig"
+            },
+            "10": {
               "name": "comment.line.number-sign.swiftconfig"
             }
           }
@@ -123,15 +147,27 @@
       "patterns": [
         {
           "name": "meta.assignment.swiftconfig",
-          "match": "^(\\s*)([A-Za-z_][\\w.-]*)(\\s+)(\\[[^\\n]*\\]|\\{[^\\n]*\\})(?:(\\s+)(#.*))?$",
+          "match": "^(\\s*)([A-Za-z_][\\w-]*)(\\.)?([\\w-]*)?(\\.)?([\\w-]*)?(\\s+)(\\[[^\\n]*\\]|\\{[^\\n]*\\})(?:(\\s+)(#.*))?$",
           "captures": {
             "2": {
               "name": "variable.other.key.swiftconfig"
             },
+            "3": {
+              "name": "variable.other.key-divider.swiftconfig"
+            },
             "4": {
-              "name": "meta.structure.value.swiftconfig"
+              "name": "variable.other.key-part2.swiftconfig"
+            },
+            "5": {
+              "name": "variable.other.key-divider.swiftconfig"
             },
             "6": {
+              "name": "variable.other.key-part3.swiftconfig"
+            },
+            "8": {
+              "name": "meta.structure.value.swiftconfig"
+            },
+            "10": {
               "name": "comment.line.number-sign.swiftconfig"
             }
           }
@@ -142,15 +178,27 @@
       "patterns": [
         {
           "name": "meta.assignment.swiftconfig",
-          "match": "^(\\s*)([A-Za-z_][\\w.-]*)(\\s+)((?:\\\"(?:\\\\.|[^\\\"])*\\\")|(?:'(?:\\\\.|[^'])*'))(?:(\\s+)(#.*))?$",
+          "match": "^(\\s*)([A-Za-z_][\\w-]*)(\\.)?([\\w-]*)?(\\.)?([\\w-]*)?(\\s+)((?:\\\"(?:\\\\.|[^\\\"])*\\\")|(?:'(?:\\\\.|[^'])*'))(?:(\\s+)(#.*))?$",
           "captures": {
             "2": {
               "name": "variable.other.key.swiftconfig"
             },
+            "3": {
+              "name": "variable.other.key-divider.swiftconfig"
+            },
             "4": {
-              "name": "string.quoted.swiftconfig"
+              "name": "variable.other.key-part2.swiftconfig"
+            },
+            "5": {
+              "name": "variable.other.key-divider.swiftconfig"
             },
             "6": {
+              "name": "variable.other.key-part3.swiftconfig"
+            },
+            "8": {
+              "name": "string.quoted.swiftconfig"
+            },
+            "10": {
               "name": "comment.line.number-sign.swiftconfig"
             }
           }
@@ -161,15 +209,27 @@
       "patterns": [
         {
           "name": "meta.assignment.swiftconfig",
-          "match": "^(\\s*)([A-Za-z_][\\w.-]*)(\\s+)(.*?)(?:(\\s+)(#.*))?$",
+          "match": "^(\\s*)([A-Za-z_][\\w-]*)(\\.)?([\\w-]*)?(\\.)?([\\w-]*)?(\\s+)(.*?)(?:(\\s+)(#.*))?$",
           "captures": {
             "2": {
               "name": "variable.other.key.swiftconfig"
             },
+            "3": {
+              "name": "variable.other.key-divider.swiftconfig"
+            },
             "4": {
-              "name": "string.unquoted.swiftconfig"
+              "name": "variable.other.key-part2.swiftconfig"
+            },
+            "5": {
+              "name": "variable.other.key-divider.swiftconfig"
             },
             "6": {
+              "name": "variable.other.key-part3.swiftconfig"
+            },
+            "8": {
+              "name": "string.unquoted.swiftconfig"
+            },
+            "10": {
               "name": "comment.line.number-sign.swiftconfig"
             }
           }
