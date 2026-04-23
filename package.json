@@ -3,6 +3,11 @@
   "displayName": "Loki Config",
   "description": "Syntax highlighting for Mayo Clinic's Swift (Loki) proteomics pipeline config files",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chorpler/vscode-loki-config"
+  },
+  "license": "UNLICENSED",
   "engines": {
     "vscode": "^1.116.0"
   },
