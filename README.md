@@ -1,10 +1,10 @@
 # swift-config README
 
-Syntax highlighting for Mayo Clinic's Swift (Loki) proteomics pipeline
+Syntax highlighting for Mayo Clinic's Swift (Loki) proteomics pipeline config files
 
 ## Features
 
-- Syntax highlighting
+- Syntax highlighting for Mayo Clinic's Swift (Loki) proteomics pipeline config files
 
 ## Requirements
 
@@ -12,6 +12,63 @@ Syntax highlighting for Mayo Clinic's Swift (Loki) proteomics pipeline
 
 ## Extension Settings
 
+Suggested colors for adding to settings:
+
+```json
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "entity.name.section.swiftconfig",
+                "settings":  {
+                    "foreground": "#FFA657",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "entity.name.instance.swiftconfig",
+                "settings":  {
+                    "foreground": "#006dc6",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "comment.line.number-sign.swiftconfig",
+                "settings":  {
+                    "foreground": "#006609",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "variable.other.key-divider.swiftconfig",
+                "settings":  {
+                    "foreground": "#a00000",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "variable.other.key.swiftconfig",
+                "settings":  {
+                    "foreground": "#7EE787",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "variable.other.key-part2.swiftconfig",
+                "settings":  {
+                    "foreground": "#7EE787",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "variable.other.key-part3.swiftconfig",
+                "settings":  {
+                    "foreground": "#368b3d",
+                    "fontStyle": ""
+                }
+            }
+        ]
+    }
+```
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
 For example:
