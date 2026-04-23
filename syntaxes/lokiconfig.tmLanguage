@@ -1,8 +1,10 @@
 $schema: https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
-name: Swift Config
-scopeName: source.swiftconfig
+name: Loki Config
+scopeName: source.lokiconfig
 fileTypes:
+  - conf
   - swiftconf
+  - lokiconf
 patterns:
   - include: '#comments'
   - include: '#section-end'
@@ -15,87 +17,87 @@ patterns:
 repository:
   comments:
     patterns:
-      - name: comment.line.number-sign.swiftconfig
+      - name: comment.line.number-sign.lokiconfig
         match: ^\s*#.*$
   section-begin:
     patterns:
-      - name: meta.section.begin.swiftconfig
+      - name: meta.section.begin.lokiconfig
         match: ^(\s*)(<)([A-Za-z_][\w-]*)(?:\s+([^>]+?))?(\s*)(>)\s*$
         captures:
           '2':
-            name: punctuation.definition.tag.begin.swiftconfig
+            name: punctuation.definition.tag.begin.lokiconfig
           '3':
-            name: entity.name.section.swiftconfig
+            name: entity.name.section.lokiconfig
           '4':
-            name: entity.name.instance.swiftconfig
+            name: entity.name.instance.lokiconfig
           '6':
-            name: punctuation.definition.tag.end.swiftconfig
+            name: punctuation.definition.tag.end.lokiconfig
   section-end:
     patterns:
-      - name: meta.section.end.swiftconfig
+      - name: meta.section.end.lokiconfig
         match: ^(\s*)(</)([A-Za-z_][\w-]*)(\s*)(>)\s*$
         captures:
           '2':
-            name: punctuation.definition.tag.begin.swiftconfig
+            name: punctuation.definition.tag.begin.lokiconfig
           '3':
-            name: entity.name.section.swiftconfig
+            name: entity.name.section.lokiconfig
           '5':
-            name: punctuation.definition.tag.end.swiftconfig
+            name: punctuation.definition.tag.end.lokiconfig
   assignment-boolean:
     patterns:
-      - name: meta.assignment.swiftconfig
+      - name: meta.assignment.lokiconfig
         match: ^(\s*)([A-Za-z_][\w.-]*)(\s+)(true|false)(?:(\s+)(#.*))?$
         captures:
           '2':
-            name: variable.other.key.swiftconfig
+            name: variable.other.key.lokiconfig
           '4':
-            name: constant.language.boolean.swiftconfig
+            name: constant.language.boolean.lokiconfig
           '6':
-            name: comment.line.number-sign.swiftconfig
+            name: comment.line.number-sign.lokiconfig
   assignment-number:
     patterns:
-      - name: meta.assignment.swiftconfig
+      - name: meta.assignment.lokiconfig
         match: >-
           ^(\s*)([A-Za-z_][\w.-]*)(\s+)([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)(?:(\s+)(#.*))?$
         captures:
           '2':
-            name: variable.other.key.swiftconfig
+            name: variable.other.key.lokiconfig
           '4':
-            name: constant.numeric.swiftconfig
+            name: constant.numeric.lokiconfig
           '6':
-            name: comment.line.number-sign.swiftconfig
+            name: comment.line.number-sign.lokiconfig
   assignment-structured:
     patterns:
-      - name: meta.assignment.swiftconfig
+      - name: meta.assignment.lokiconfig
         match: ^(\s*)([A-Za-z_][\w.-]*)(\s+)(\[[^\n]*\]|\{[^\n]*\})(?:(\s+)(#.*))?$
         captures:
           '2':
-            name: variable.other.key.swiftconfig
+            name: variable.other.key.lokiconfig
           '4':
-            name: meta.structure.value.swiftconfig
+            name: meta.structure.value.lokiconfig
           '6':
-            name: comment.line.number-sign.swiftconfig
+            name: comment.line.number-sign.lokiconfig
   assignment-quoted:
     patterns:
-      - name: meta.assignment.swiftconfig
+      - name: meta.assignment.lokiconfig
         match: >-
           ^(\s*)([A-Za-z_][\w.-]*)(\s+)((?:\"(?:\\.|[^\"])*\")|(?:'(?:\\.|[^'])*'))(?:(\s+)(#.*))?$
         captures:
           '2':
-            name: variable.other.key.swiftconfig
+            name: variable.other.key.lokiconfig
           '4':
-            name: string.quoted.swiftconfig
+            name: string.quoted.lokiconfig
           '6':
-            name: comment.line.number-sign.swiftconfig
+            name: comment.line.number-sign.lokiconfig
   assignment-generic:
     patterns:
-      - name: meta.assignment.swiftconfig
+      - name: meta.assignment.lokiconfig
         match: ^(\s*)([A-Za-z_][\w.-]*)(\s+)(.*?)(?:(\s+)(#.*))?$
         captures:
           '2':
-            name: variable.other.key.swiftconfig
+            name: variable.other.key.lokiconfig
           '4':
-            name: string.unquoted.swiftconfig
+            name: string.unquoted.lokiconfig
           '6':
-            name: comment.line.number-sign.swiftconfig
+            name: comment.line.number-sign.lokiconfig
 

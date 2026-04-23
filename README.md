@@ -1,4 +1,4 @@
-# swift-config README
+# vscode-loki-config README
 
 Syntax highlighting for Mayo Clinic's Swift (Loki) proteomics pipeline config files
 
@@ -18,49 +18,49 @@ Suggested colors for adding to settings:
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
-                "scope": "entity.name.section.swiftconfig",
+                "scope": "entity.name.section.lokiconfig",
                 "settings":  {
                     "foreground": "#FFA657",
                     "fontStyle": ""
                 }
             },
             {
-                "scope": "entity.name.instance.swiftconfig",
+                "scope": "entity.name.instance.lokiconfig",
                 "settings":  {
                     "foreground": "#006dc6",
                     "fontStyle": ""
                 }
             },
             {
-                "scope": "comment.line.number-sign.swiftconfig",
+                "scope": "comment.line.number-sign.lokiconfig",
                 "settings":  {
                     "foreground": "#006609",
                     "fontStyle": ""
                 }
             },
             {
-                "scope": "variable.other.key-divider.swiftconfig",
+                "scope": "variable.other.key-divider.lokiconfig",
                 "settings":  {
                     "foreground": "#a00000",
                     "fontStyle": ""
                 }
             },
             {
-                "scope": "variable.other.key.swiftconfig",
+                "scope": "variable.other.key.lokiconfig",
                 "settings":  {
                     "foreground": "#7EE787",
                     "fontStyle": "bold"
                 }
             },
             {
-                "scope": "variable.other.key-part2.swiftconfig",
+                "scope": "variable.other.key-part2.lokiconfig",
                 "settings":  {
                     "foreground": "#7EE787",
                     "fontStyle": ""
                 }
             },
             {
-                "scope": "variable.other.key-part3.swiftconfig",
+                "scope": "variable.other.key-part3.lokiconfig",
                 "settings":  {
                     "foreground": "#368b3d",
                     "fontStyle": ""

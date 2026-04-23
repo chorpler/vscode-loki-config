@@ -1,9 +1,11 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "Swift Config",
-  "scopeName": "source.swiftconfig",
+  "name": "Loki Config",
+  "scopeName": "source.lokiconfig",
   "fileTypes": [
-    "swiftconf"
+    "conf",
+    "swiftconf",
+    "lokiconf"
   ],
   "patterns": [
     {
@@ -35,7 +37,7 @@
     "comments": {
       "patterns": [
         {
-          "name": "comment.line.number-sign.swiftconfig",
+          "name": "comment.line.number-sign.lokiconfig",
           "match": "^\\s*#.*$"
         }
       ]
@@ -43,20 +45,20 @@
     "section-begin": {
       "patterns": [
         {
-          "name": "meta.section.begin.swiftconfig",
+          "name": "meta.section.begin.lokiconfig",
           "match": "^(\\s*)(<)([A-Za-z_][\\w-]*)(?:\\s+([^>]+?))?(\\s*)(>)\\s*$",
           "captures": {
             "2": {
-              "name": "punctuation.definition.tag.begin.swiftconfig"
+              "name": "punctuation.definition.tag.begin.lokiconfig"
             },
             "3": {
-              "name": "entity.name.section.swiftconfig"
+              "name": "entity.name.section.lokiconfig"
             },
             "4": {
-              "name": "entity.name.instance.swiftconfig"
+              "name": "entity.name.instance.lokiconfig"
             },
             "6": {
-              "name": "punctuation.definition.tag.end.swiftconfig"
+              "name": "punctuation.definition.tag.end.lokiconfig"
             }
           }
         }
@@ -65,17 +67,17 @@
     "section-end": {
       "patterns": [
         {
-          "name": "meta.section.end.swiftconfig",
+          "name": "meta.section.end.lokiconfig",
           "match": "^(\\s*)(</)([A-Za-z_][\\w-]*)(\\s*)(>)\\s*$",
           "captures": {
             "2": {
-              "name": "punctuation.definition.tag.begin.swiftconfig"
+              "name": "punctuation.definition.tag.begin.lokiconfig"
             },
             "3": {
-              "name": "entity.name.section.swiftconfig"
+              "name": "entity.name.section.lokiconfig"
             },
             "5": {
-              "name": "punctuation.definition.tag.end.swiftconfig"
+              "name": "punctuation.definition.tag.end.lokiconfig"
             }
           }
         }
@@ -84,29 +86,29 @@
     "assignment-boolean": {
       "patterns": [
         {
-          "name": "meta.assignment.swiftconfig",
+          "name": "meta.assignment.lokiconfig",
           "match": "^(\\s*)([A-Za-z_][\\w-]*)(\\.)?([\\w-]*)?(\\.)?([\\w-]*)?(\\s+)(true|false)(?:(\\s+)(#.*))?$",
           "captures": {
             "2": {
-              "name": "variable.other.key.swiftconfig"
+              "name": "variable.other.key.lokiconfig"
             },
             "3": {
-              "name": "variable.other.key-divider.swiftconfig"
+              "name": "variable.other.key-divider.lokiconfig"
             },
             "4": {
-              "name": "variable.other.key-part2.swiftconfig"
+              "name": "variable.other.key-part2.lokiconfig"
             },
             "5": {
-              "name": "variable.other.key-divider.swiftconfig"
+              "name": "variable.other.key-divider.lokiconfig"
             },
             "6": {
-              "name": "variable.other.key-part3.swiftconfig"
+              "name": "variable.other.key-part3.lokiconfig"
             },
             "8": {
-              "name": "constant.language.boolean.swiftconfig"
+              "name": "constant.language.boolean.lokiconfig"
             },
             "10": {
-              "name": "comment.line.number-sign.swiftconfig"
+              "name": "comment.line.number-sign.lokiconfig"
             }
           }
         }
@@ -115,29 +117,29 @@
     "assignment-number": {
       "patterns": [
         {
-          "name": "meta.assignment.swiftconfig",
+          "name": "meta.assignment.lokiconfig",
           "match": "^(\\s*)([A-Za-z_][\\w-]*)(\\.)?([\\w-]*)?(\\.)?([\\w-]*)?(\\s+)([-+]?\\d+(?:\\.\\d+)?(?:[eE][-+]?\\d+)?)(?:(\\s+)(#.*))?$",
           "captures": {
             "2": {
-              "name": "variable.other.key.swiftconfig"
+              "name": "variable.other.key.lokiconfig"
             },
             "3": {
-              "name": "variable.other.key-divider.swiftconfig"
+              "name": "variable.other.key-divider.lokiconfig"
             },
             "4": {
-              "name": "variable.other.key-part2.swiftconfig"
+              "name": "variable.other.key-part2.lokiconfig"
             },
             "5": {
-              "name": "variable.other.key-divider.swiftconfig"
+              "name": "variable.other.key-divider.lokiconfig"
             },
             "6": {
-              "name": "variable.other.key-part3.swiftconfig"
+              "name": "variable.other.key-part3.lokiconfig"
             },
             "8": {
-              "name": "constant.numeric.swiftconfig"
+              "name": "constant.numeric.lokiconfig"
             },
             "10": {
-              "name": "comment.line.number-sign.swiftconfig"
+              "name": "comment.line.number-sign.lokiconfig"
             }
           }
         }
@@ -146,29 +148,29 @@
     "assignment-structured": {
       "patterns": [
         {
-          "name": "meta.assignment.swiftconfig",
+          "name": "meta.assignment.lokiconfig",
           "match": "^(\\s*)([A-Za-z_][\\w-]*)(\\.)?([\\w-]*)?(\\.)?([\\w-]*)?(\\s+)(\\[[^\\n]*\\]|\\{[^\\n]*\\})(?:(\\s+)(#.*))?$",
           "captures": {
             "2": {
-              "name": "variable.other.key.swiftconfig"
+              "name": "variable.other.key.lokiconfig"
             },
             "3": {
-              "name": "variable.other.key-divider.swiftconfig"
+              "name": "variable.other.key-divider.lokiconfig"
             },
             "4": {
-              "name": "variable.other.key-part2.swiftconfig"
+              "name": "variable.other.key-part2.lokiconfig"
             },
             "5": {
-              "name": "variable.other.key-divider.swiftconfig"
+              "name": "variable.other.key-divider.lokiconfig"
             },
             "6": {
-              "name": "variable.other.key-part3.swiftconfig"
+              "name": "variable.other.key-part3.lokiconfig"
             },
             "8": {
-              "name": "meta.structure.value.swiftconfig"
+              "name": "meta.structure.value.lokiconfig"
             },
             "10": {
-              "name": "comment.line.number-sign.swiftconfig"
+              "name": "comment.line.number-sign.lokiconfig"
             }
           }
         }
@@ -177,29 +179,29 @@
     "assignment-quoted": {
       "patterns": [
         {
-          "name": "meta.assignment.swiftconfig",
+          "name": "meta.assignment.lokiconfig",
           "match": "^(\\s*)([A-Za-z_][\\w-]*)(\\.)?([\\w-]*)?(\\.)?([\\w-]*)?(\\s+)((?:\\\"(?:\\\\.|[^\\\"])*\\\")|(?:'(?:\\\\.|[^'])*'))(?:(\\s+)(#.*))?$",
           "captures": {
             "2": {
-              "name": "variable.other.key.swiftconfig"
+              "name": "variable.other.key.lokiconfig"
             },
             "3": {
-              "name": "variable.other.key-divider.swiftconfig"
+              "name": "variable.other.key-divider.lokiconfig"
             },
             "4": {
-              "name": "variable.other.key-part2.swiftconfig"
+              "name": "variable.other.key-part2.lokiconfig"
             },
             "5": {
-              "name": "variable.other.key-divider.swiftconfig"
+              "name": "variable.other.key-divider.lokiconfig"
             },
             "6": {
-              "name": "variable.other.key-part3.swiftconfig"
+              "name": "variable.other.key-part3.lokiconfig"
             },
             "8": {
-              "name": "string.quoted.swiftconfig"
+              "name": "string.quoted.lokiconfig"
             },
             "10": {
-              "name": "comment.line.number-sign.swiftconfig"
+              "name": "comment.line.number-sign.lokiconfig"
             }
           }
         }
@@ -208,29 +210,29 @@
     "assignment-generic": {
       "patterns": [
         {
-          "name": "meta.assignment.swiftconfig",
+          "name": "meta.assignment.lokiconfig",
           "match": "^(\\s*)([A-Za-z_][\\w-]*)(\\.)?([\\w-]*)?(\\.)?([\\w-]*)?(\\s+)(.*?)(?:(\\s+)(#.*))?$",
           "captures": {
             "2": {
-              "name": "variable.other.key.swiftconfig"
+              "name": "variable.other.key.lokiconfig"
             },
             "3": {
-              "name": "variable.other.key-divider.swiftconfig"
+              "name": "variable.other.key-divider.lokiconfig"
             },
             "4": {
-              "name": "variable.other.key-part2.swiftconfig"
+              "name": "variable.other.key-part2.lokiconfig"
             },
             "5": {
-              "name": "variable.other.key-divider.swiftconfig"
+              "name": "variable.other.key-divider.lokiconfig"
             },
             "6": {
-              "name": "variable.other.key-part3.swiftconfig"
+              "name": "variable.other.key-part3.lokiconfig"
             },
             "8": {
-              "name": "string.unquoted.swiftconfig"
+              "name": "string.unquoted.lokiconfig"
             },
             "10": {
-              "name": "comment.line.number-sign.swiftconfig"
+              "name": "comment.line.number-sign.lokiconfig"
             }
           }
         }
