@@ -1,0 +1,181 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Swift Config",
+  "scopeName": "source.swiftconfig",
+  "fileTypes": [
+    "swiftconf"
+  ],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#section-end"
+    },
+    {
+      "include": "#section-begin"
+    },
+    {
+      "include": "#assignment-boolean"
+    },
+    {
+      "include": "#assignment-number"
+    },
+    {
+      "include": "#assignment-structured"
+    },
+    {
+      "include": "#assignment-quoted"
+    },
+    {
+      "include": "#assignment-generic"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.swiftconfig",
+          "match": "^\\s*#.*$"
+        }
+      ]
+    },
+    "section-begin": {
+      "patterns": [
+        {
+          "name": "meta.section.begin.swiftconfig",
+          "match": "^(\\s*)(<)([A-Za-z_][\\w-]*)(?:\\s+([^>]+?))?(\\s*)(>)\\s*$",
+          "captures": {
+            "2": {
+              "name": "punctuation.definition.tag.begin.swiftconfig"
+            },
+            "3": {
+              "name": "entity.name.section.swiftconfig"
+            },
+            "4": {
+              "name": "entity.name.instance.swiftconfig"
+            },
+            "6": {
+              "name": "punctuation.definition.tag.end.swiftconfig"
+            }
+          }
+        }
+      ]
+    },
+    "section-end": {
+      "patterns": [
+        {
+          "name": "meta.section.end.swiftconfig",
+          "match": "^(\\s*)(</)([A-Za-z_][\\w-]*)(\\s*)(>)\\s*$",
+          "captures": {
+            "2": {
+              "name": "punctuation.definition.tag.begin.swiftconfig"
+            },
+            "3": {
+              "name": "entity.name.section.swiftconfig"
+            },
+            "5": {
+              "name": "punctuation.definition.tag.end.swiftconfig"
+            }
+          }
+        }
+      ]
+    },
+    "assignment-boolean": {
+      "patterns": [
+        {
+          "name": "meta.assignment.swiftconfig",
+          "match": "^(\\s*)([A-Za-z_][\\w.-]*)(\\s+)(true|false)(?:(\\s+)(#.*))?$",
+          "captures": {
+            "2": {
+              "name": "variable.other.key.swiftconfig"
+            },
+            "4": {
+              "name": "constant.language.boolean.swiftconfig"
+            },
+            "6": {
+              "name": "comment.line.number-sign.swiftconfig"
+            }
+          }
+        }
+      ]
+    },
+    "assignment-number": {
+      "patterns": [
+        {
+          "name": "meta.assignment.swiftconfig",
+          "match": "^(\\s*)([A-Za-z_][\\w.-]*)(\\s+)([-+]?\\d+(?:\\.\\d+)?(?:[eE][-+]?\\d+)?)(?:(\\s+)(#.*))?$",
+          "captures": {
+            "2": {
+              "name": "variable.other.key.swiftconfig"
+            },
+            "4": {
+              "name": "constant.numeric.swiftconfig"
+            },
+            "6": {
+              "name": "comment.line.number-sign.swiftconfig"
+            }
+          }
+        }
+      ]
+    },
+    "assignment-structured": {
+      "patterns": [
+        {
+          "name": "meta.assignment.swiftconfig",
+          "match": "^(\\s*)([A-Za-z_][\\w.-]*)(\\s+)(\\[[^\\n]*\\]|\\{[^\\n]*\\})(?:(\\s+)(#.*))?$",
+          "captures": {
+            "2": {
+              "name": "variable.other.key.swiftconfig"
+            },
+            "4": {
+              "name": "meta.structure.value.swiftconfig"
+            },
+            "6": {
+              "name": "comment.line.number-sign.swiftconfig"
+            }
+          }
+        }
+      ]
+    },
+    "assignment-quoted": {
+      "patterns": [
+        {
+          "name": "meta.assignment.swiftconfig",
+          "match": "^(\\s*)([A-Za-z_][\\w.-]*)(\\s+)((?:\\\"(?:\\\\.|[^\\\"])*\\\")|(?:'(?:\\\\.|[^'])*'))(?:(\\s+)(#.*))?$",
+          "captures": {
+            "2": {
+              "name": "variable.other.key.swiftconfig"
+            },
+            "4": {
+              "name": "string.quoted.swiftconfig"
+            },
+            "6": {
+              "name": "comment.line.number-sign.swiftconfig"
+            }
+          }
+        }
+      ]
+    },
+    "assignment-generic": {
+      "patterns": [
+        {
+          "name": "meta.assignment.swiftconfig",
+          "match": "^(\\s*)([A-Za-z_][\\w.-]*)(\\s+)(.*?)(?:(\\s+)(#.*))?$",
+          "captures": {
+            "2": {
+              "name": "variable.other.key.swiftconfig"
+            },
+            "4": {
+              "name": "string.unquoted.swiftconfig"
+            },
+            "6": {
+              "name": "comment.line.number-sign.swiftconfig"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
