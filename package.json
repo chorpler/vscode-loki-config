@@ -26,5 +26,10 @@
       "scopeName": "source.lokiconfig",
       "path": "./syntaxes/lokiconfig.tmLanguage.json"
     }]
+  },
+  "scripts": {
+    "build": "npm run package",
+    "package": "vsce package",
+    "vsix": "npm run package"
   }
 }
