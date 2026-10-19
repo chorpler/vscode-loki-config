@@ -1,0 +1,72 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/syntax.html
+name: Loki Config
+file_extensions:
+  - conf
+  - swiftconf
+  - lokiconf
+scope: source.lokiconfig
+contexts:
+  main:
+    - include: comments
+    - include: section-end
+    - include: section-begin
+    - include: assignment-boolean
+    - include: assignment-number
+    - include: assignment-structured
+    - include: assignment-quoted
+    - include: assignment-generic
+  assignment-boolean:
+    - match: '^(\s*)([A-Za-z_][\w.-]*)(\s+)(true|false)(?:(\s+)(#.*))?$'
+      scope: meta.assignment.lokiconfig
+      captures:
+        2: variable.other.key.lokiconfig
+        4: constant.language.boolean.lokiconfig
+        6: comment.line.number-sign.lokiconfig
+  assignment-generic:
+    - match: '^(\s*)([A-Za-z_][\w.-]*)(\s+)(.*?)(?:(\s+)(#.*))?$'
+      scope: meta.assignment.lokiconfig
+      captures:
+        2: variable.other.key.lokiconfig
+        4: string.unquoted.lokiconfig
+        6: comment.line.number-sign.lokiconfig
+  assignment-number:
+    - match: '^(\s*)([A-Za-z_][\w.-]*)(\s+)([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)(?:(\s+)(#.*))?$'
+      scope: meta.assignment.lokiconfig
+      captures:
+        2: variable.other.key.lokiconfig
+        4: constant.numeric.lokiconfig
+        6: comment.line.number-sign.lokiconfig
+  assignment-quoted:
+    - match: '^(\s*)([A-Za-z_][\w.-]*)(\s+)((?:\"(?:\\.|[^\"])*\")|(?:''(?:\\.|[^''])*''))(?:(\s+)(#.*))?$'
+      scope: meta.assignment.lokiconfig
+      captures:
+        2: variable.other.key.lokiconfig
+        4: string.quoted.lokiconfig
+        6: comment.line.number-sign.lokiconfig
+  assignment-structured:
+    - match: '^(\s*)([A-Za-z_][\w.-]*)(\s+)(\[[^\n]*\]|\{[^\n]*\})(?:(\s+)(#.*))?$'
+      scope: meta.assignment.lokiconfig
+      captures:
+        2: variable.other.key.lokiconfig
+        4: meta.structure.value.lokiconfig
+        6: comment.line.number-sign.lokiconfig
+  comments:
+    - match: ^\s*#.*$
+      scope: comment.line.number-sign.lokiconfig
+  section-begin:
+    - match: '^(\s*)(<)([A-Za-z_][\w-]*)(?:\s+([^>]+?))?(\s*)(>)\s*$'
+      scope: meta.section.begin.lokiconfig`
+      captures:
+        2: punctuation.definition.tag.begin.lokiconfig
+        3: entity.name.section.lokiconfig
+        4: entity.name.instance.lokiconfig
+        6: punctuation.definition.tag.end.lokiconfig
+  section-end:
+    - match: '^(\s*)(</)([A-Za-z_][\w-]*)(\s*)(>)\s*$'
+      scope: meta.section.end.lokiconfig
+      captures:
+        2: punctuation.definition.tag.begin.lokiconfig
+        3: entity.name.section.lokiconfig
+        5: punctuation.definition.tag.end.lokiconfig

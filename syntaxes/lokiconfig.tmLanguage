@@ -1,103 +1,281 @@
-$schema: https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
-name: Loki Config
-scopeName: source.lokiconfig
-fileTypes:
-  - conf
-  - swiftconf
-  - lokiconf
-patterns:
-  - include: '#comments'
-  - include: '#section-end'
-  - include: '#section-begin'
-  - include: '#assignment-boolean'
-  - include: '#assignment-number'
-  - include: '#assignment-structured'
-  - include: '#assignment-quoted'
-  - include: '#assignment-generic'
-repository:
-  comments:
-    patterns:
-      - name: comment.line.number-sign.lokiconfig
-        match: ^\s*#.*$
-  section-begin:
-    patterns:
-      - name: meta.section.begin.lokiconfig
-        match: ^(\s*)(<)([A-Za-z_][\w-]*)(?:\s+([^>]+?))?(\s*)(>)\s*$
-        captures:
-          '2':
-            name: punctuation.definition.tag.begin.lokiconfig
-          '3':
-            name: entity.name.section.lokiconfig
-          '4':
-            name: entity.name.instance.lokiconfig
-          '6':
-            name: punctuation.definition.tag.end.lokiconfig
-  section-end:
-    patterns:
-      - name: meta.section.end.lokiconfig
-        match: ^(\s*)(</)([A-Za-z_][\w-]*)(\s*)(>)\s*$
-        captures:
-          '2':
-            name: punctuation.definition.tag.begin.lokiconfig
-          '3':
-            name: entity.name.section.lokiconfig
-          '5':
-            name: punctuation.definition.tag.end.lokiconfig
-  assignment-boolean:
-    patterns:
-      - name: meta.assignment.lokiconfig
-        match: ^(\s*)([A-Za-z_][\w.-]*)(\s+)(true|false)(?:(\s+)(#.*))?$
-        captures:
-          '2':
-            name: variable.other.key.lokiconfig
-          '4':
-            name: constant.language.boolean.lokiconfig
-          '6':
-            name: comment.line.number-sign.lokiconfig
-  assignment-number:
-    patterns:
-      - name: meta.assignment.lokiconfig
-        match: >-
-          ^(\s*)([A-Za-z_][\w.-]*)(\s+)([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)(?:(\s+)(#.*))?$
-        captures:
-          '2':
-            name: variable.other.key.lokiconfig
-          '4':
-            name: constant.numeric.lokiconfig
-          '6':
-            name: comment.line.number-sign.lokiconfig
-  assignment-structured:
-    patterns:
-      - name: meta.assignment.lokiconfig
-        match: ^(\s*)([A-Za-z_][\w.-]*)(\s+)(\[[^\n]*\]|\{[^\n]*\})(?:(\s+)(#.*))?$
-        captures:
-          '2':
-            name: variable.other.key.lokiconfig
-          '4':
-            name: meta.structure.value.lokiconfig
-          '6':
-            name: comment.line.number-sign.lokiconfig
-  assignment-quoted:
-    patterns:
-      - name: meta.assignment.lokiconfig
-        match: >-
-          ^(\s*)([A-Za-z_][\w.-]*)(\s+)((?:\"(?:\\.|[^\"])*\")|(?:'(?:\\.|[^'])*'))(?:(\s+)(#.*))?$
-        captures:
-          '2':
-            name: variable.other.key.lokiconfig
-          '4':
-            name: string.quoted.lokiconfig
-          '6':
-            name: comment.line.number-sign.lokiconfig
-  assignment-generic:
-    patterns:
-      - name: meta.assignment.lokiconfig
-        match: ^(\s*)([A-Za-z_][\w.-]*)(\s+)(.*?)(?:(\s+)(#.*))?$
-        captures:
-          '2':
-            name: variable.other.key.lokiconfig
-          '4':
-            name: string.unquoted.lokiconfig
-          '6':
-            name: comment.line.number-sign.lokiconfig
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>conf</string>
+		<string>swiftconf</string>
+		<string>lokiconf</string>
+	</array>
+	<key>name</key>
+	<string>Loki Config</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>include</key>
+			<string>#comments</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#section-end</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#section-begin</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#assignment-boolean</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#assignment-number</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#assignment-structured</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#assignment-quoted</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#assignment-generic</string>
+		</dict>
+	</array>
+	<key>repository</key>
+	<dict>
+		<key>assignment-boolean</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.key.lokiconfig</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>constant.language.boolean.lokiconfig</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>comment.line.number-sign.lokiconfig</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(\s*)([A-Za-z_][\w.-]*)(\s+)(true|false)(?:(\s+)(#.*))?$</string>
+					<key>name</key>
+					<string>meta.assignment.lokiconfig</string>
+				</dict>
+			</array>
+		</dict>
+		<key>assignment-generic</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.key.lokiconfig</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>string.unquoted.lokiconfig</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>comment.line.number-sign.lokiconfig</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(\s*)([A-Za-z_][\w.-]*)(\s+)(.*?)(?:(\s+)(#.*))?$</string>
+					<key>name</key>
+					<string>meta.assignment.lokiconfig</string>
+				</dict>
+			</array>
+		</dict>
+		<key>assignment-number</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.key.lokiconfig</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>constant.numeric.lokiconfig</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>comment.line.number-sign.lokiconfig</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(\s*)([A-Za-z_][\w.-]*)(\s+)([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)(?:(\s+)(#.*))?$</string>
+					<key>name</key>
+					<string>meta.assignment.lokiconfig</string>
+				</dict>
+			</array>
+		</dict>
+		<key>assignment-quoted</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.key.lokiconfig</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>string.quoted.lokiconfig</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>comment.line.number-sign.lokiconfig</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(\s*)([A-Za-z_][\w.-]*)(\s+)((?:\"(?:\\.|[^\"])*\")|(?:'(?:\\.|[^'])*'))(?:(\s+)(#.*))?$</string>
+					<key>name</key>
+					<string>meta.assignment.lokiconfig</string>
+				</dict>
+			</array>
+		</dict>
+		<key>assignment-structured</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.key.lokiconfig</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>meta.structure.value.lokiconfig</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>comment.line.number-sign.lokiconfig</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(\s*)([A-Za-z_][\w.-]*)(\s+)(\[[^\n]*\]|\{[^\n]*\})(?:(\s+)(#.*))?$</string>
+					<key>name</key>
+					<string>meta.assignment.lokiconfig</string>
+				</dict>
+			</array>
+		</dict>
+		<key>comments</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>^\s*#.*$</string>
+					<key>name</key>
+					<string>comment.line.number-sign.lokiconfig</string>
+				</dict>
+			</array>
+		</dict>
+		<key>section-begin</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.lokiconfig</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.section.lokiconfig</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.instance.lokiconfig</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.lokiconfig</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(\s*)(&lt;)([A-Za-z_][\w-]*)(?:\s+([^&gt;]+?))?(\s*)(&gt;)\s*$</string>
+					<key>name</key>
+					<string>meta.section.begin.lokiconfig`</string>
+				</dict>
+			</array>
+		</dict>
+		<key>section-end</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.lokiconfig</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.section.lokiconfig</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.lokiconfig</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(\s*)(&lt;/)([A-Za-z_][\w-]*)(\s*)(&gt;)\s*$</string>
+					<key>name</key>
+					<string>meta.section.end.lokiconfig</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>scopeName</key>
+	<string>source.lokiconfig</string>
+</dict>
+</plist>

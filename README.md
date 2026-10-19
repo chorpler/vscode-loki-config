@@ -2,6 +2,10 @@
 
 Syntax highlighting for Mayo Clinic's Swift (Loki) proteomics pipeline config files
 
+- Reference for tmLanguage: [tmLanguage JSON schema](https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json)
+- Can include a line at the top of YAML file:
+  - `$schema: https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json`
+
 ## Features
 
 - Syntax highlighting for Mayo Clinic's Swift (Loki) proteomics pipeline config files
